@@ -45,4 +45,5 @@ group :test, :development do
   gem "sqlite3"
   gem "pry"
   gem 'rack_session_access'
+  gem 'bcrypt'
 end

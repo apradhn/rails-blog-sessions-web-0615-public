@@ -6,6 +6,7 @@ class PostsController < ApplicationController
   end
 
   def show
+    @post = set_post
   end
 
   def new
@@ -55,5 +56,5 @@ class PostsController < ApplicationController
 
     def post_params
       params.require(:post).permit(:name, :content, :user_id, :tag_ids => [], :tags_attributes => [:id, :name], :comments_attributes => [:content, :user_id])
-    end
+    end   
 end
