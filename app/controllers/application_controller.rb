@@ -2,13 +2,12 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
-  skip_before_action :login_required, only: [:new]
 
   private
 
   def login_required
     if !logged_in?
-      redirect_to login_path, notice: "You need to login"
+      redirect_to login_path, notice: "Log in to edit or delete your Post"
     end
   end
 
